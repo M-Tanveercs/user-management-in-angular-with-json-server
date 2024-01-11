@@ -1,0 +1,93 @@
+<!-- your-component.component.html -->
+<div class="container mt-3">
+  <ul class="nav nav-tabs" id="myTabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="addUser-tab" data-bs-toggle="tab" href="#addUser" role="tab" aria-controls="addUser" aria-selected="true">Add User</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="userList-tab" data-bs-toggle="tab" href="#userList" role="tab" aria-controls="userList" aria-selected="false">User List</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="addUser" role="tabpanel" aria-labelledby="addUser-tab">
+        <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+  <div class="row d-flex">
+ 
+    <div class="mb-3 col-md-6">
+      <label for="name" class="form-label">Name*</label> 
+      <input type="text" id="name" name="name" formControlName="name" class="form-control" placeholder="enter name">
+    </div>
+     <div class="mb-3 col-md-6">
+      <label for="mobile" class="form-label">Mobile No*</label>
+      <input type="number" id="mobile"  name="mobile" formControlName="mobile" class="form-control" placeholder="enter mobile">
+    </div>
+   
+
+    
+
+ </div>
+  <div class="row d-flex">
+ 
+    <div class="mb-3 col-md-6">
+      <label for="email" class="form-label">Email*</label>
+      <input type="email" id="email" name="email" formControlName="email"  class="form-control" placeholder="enter email">
+    </div>
+    <div class="mb-3 col-md-6">
+      <label for="age" class="form-label">Age</label>
+      <input type="number" id="age"  name="age" formControlName="age" class="form-control" placeholder="enter age">
+    </div>
+    
+   
+
+    
+
+ </div>
+ <div class=" mt-2  btns">
+ 
+    
+      <button type="submit" value="" class="btn btn-primary">{{buttnType}}</button>
+
+    
+      <button type="reset" value="" (click)="reset()" class="btn btn-primary ml">Reset</button>
+    
+   
+
+    
+
+ </div>
+</form>
+
+</div>
+    <div class="tab-pane fade" id="userList" role="tabpanel" aria-labelledby="userList-tab">
+      <div>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile No.</th>
+      <th scope="col">Age</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor=" let item of users; let i = index">
+      <th scope="row"> {{i+1}} </th>
+      <td>{{item.name}}</td>
+      <td>{{item.email }}</td>
+      <td> {{item.mobile}} </td>
+      <td> {{item.age}} </td>
+      <td>
+        <button type="button" class="btn btn-primary ml-1" (click)="getUserById(item.id)">Edit </button>
+     <button type="button" class="btn btn-danger m-1" (click)="deleteConfirmation(item.id)">Delete </button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+      </div>
+    </div>
+  </div>
+</div>

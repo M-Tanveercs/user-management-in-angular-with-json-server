@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "9f6d",
+      "name": "tanveer",
+      "email": "test@gmail.com",
+      "mobile": 232323,
+      "age": 23
+    },
+    {
+      "id": "2a86",
+      "name": "sfsdf",
+      "email": "test@gmail.com",
+      "mobile": 232323,
+      "age": 23
+    },
+    {
+      "id": "b880",
+      "name": "fsd",
+      "email": "vishal@gmail.com",
+      "mobile": 232323,
+      "age": 23
+    },
+    {
+      "id": "a54e",
+      "name": "fsf",
+      "email": "test@gmail.com",
+      "mobile": 343,
+      "age": 34
+    },
+    {
+      "id": "5d16",
+      "name": "FSDF",
+      "email": "vishal@gmail.com",
+      "mobile": 232323,
+      "age": 23
+    }
+  ]
+}
